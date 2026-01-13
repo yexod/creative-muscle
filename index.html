@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Muscle - Facebook Ads Got 20x Harder. We Made Them 99% Cheaper.</title>
+    <meta name="description" content="Meta's algorithm demands 120+ creative variations. Agencies charge $60,000. We charge $179. Same quality. You control everything.">
+    
+    <!-- JetBrains Mono Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Brand Colors */
+            --color-primary: #7B3FF2;
+            --color-primary-hover: #5A2AB8;
+            --color-primary-light: #9D6BF5;
+            --color-secondary: #FF8F3D;
+            --color-secondary-hover: #FF7820;
+            --color-secondary-light: #FFB070;
+            --color-accent: #00D9FF;
+            --color-accent-hover: #00B8D4;
+            
+            /* Backgrounds */
+            --bg-primary: #0F1419;
+            --bg-secondary: #1A1F2E;
+            --bg-tertiary: #252B3A;
+            --bg-hover: #323947;
+            
+            /* Text */
+            --text-primary: #FFFFFF;
+            --text-secondary: #A8B2C1;
+            --text-tertiary: #6B7785;
+            --text-inverse: #0F1419;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 24px rgba(123, 63, 242, 0.4);
+            --shadow-glow-secondary: 0 4px 16px rgba(255, 143, 61, 0.4);
+            
+            /* Borders */
+            --border-primary: #252B3A;
+            --border-secondary: #323947;
+            --border-accent: #7B3FF2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-primary);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-cta {
+            background: var(--color-primary);
+            color: var(--text-inverse);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .nav-cta:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 10rem 0 6rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(123, 63, 242, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 143, 61, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            position: relative;
+        }
+        
+        .hero-highlight {
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        .subhead {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .trust-signal {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .trust-badge {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+        }
+        
+        .cta-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+        
+        /* Context Section */
+        .context {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 2rem auto;
+            max-width: 900px;
+            border: 1px solid var(--border-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .context::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .context:hover::before {
+            opacity: 0.3;
+        }
+        
+        .context p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .context em {
+            color: var(--color-secondary);
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        /* Section Headers */
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* How It Works */
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .workflow-step {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .workflow-step::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .workflow-step:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+        }
+        
+        .workflow-step:hover::before {
+            opacity: 0.3;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .step-time {
+            font-size: 0.875rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .step-description li {
+            margin-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Workflow Arrows */
+        .workflow-arrows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            gap: 2rem;
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+        
+        /* Math Section / Table */
+        .pricing-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-primary);
+        }
+        
+        th {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-primary);
+        }
+        
+        td {
+            padding: 1.5rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-primary);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .price-highlight {
+            color: var(--color-secondary);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+        
+        .savings-highlight {
+            color: var(--color-accent);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .pricing-note {
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+        
+        /* Reality Check */
+        .reality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .reality-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        
+        .reality-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .without {
+            border-left: 3px solid var(--color-secondary);
+        }
+        
+        .with {
+            border-left: 3px solid var(--color-accent);
+        }
+        
+        .reality-list {
+            list-style: none;
+        }
+        
+        .reality-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .icon-warning {
+            color: var(--color-secondary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .icon-success {
+            color: var(--color-accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        /* Industries Grid */
+        .industries {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .industry-card {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .industry-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        .industry-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+        
+        .industry-examples {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .industry-use-case {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-secondary);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            position: relative;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(123, 63, 242, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .cta-box {
+            background: var(--bg-tertiary);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .cta-box h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .urgency {
+            display: inline-block;
+            background: var(--bg-primary);
+            color: var(--color-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .no-risk {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+        
+        /* Footer Trust Bar */
+        .trust-bar {
+            background: var(--bg-tertiary);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-primary);
+        }
+        
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .trust-checkmark {
+            color: var(--color-accent);
+        }
+        
+        /* Pixel Decorations */
+        .pixel-decoration {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.3;
+        }
+        
+        .pixel-1 {
+            top: 10%;
+            left: 5%;
+            background: var(--color-primary);
+            transform: rotate(45deg);
+        }
+        
+        .pixel-2 {
+            top: 20%;
+            right: 10%;
+            background: var(--color-secondary);
+        }
+        
+        .pixel-3 {
+            bottom: 15%;
+            left: 8%;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .subhead {
+                font-size: 1rem;
+            }
+            
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+            
+            .reality-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-items {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            table {
+                font-size: 0.875rem;
+            }
+            
+            th, td {
+                padding: 1rem 0.5rem;
+            }
+            
+            .context {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Gradient Text Animation */
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CREATIVE MUSCLE</div>
+            <a href="#book-demo" class="nav-cta">Book Your Demo</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="pixel-decoration pixel-1"></div>
+            <div class="pixel-decoration pixel-2"></div>
+            <div class="pixel-decoration pixel-3"></div>
+            
+            <h1 class="fade-in">
+                Facebook Ads Got 20x Harder.<br>
+                <span class="hero-highlight gradient-animate">We Made Them 99% Cheaper.</span>
+            </h1>
+            
+            <p class="subhead fade-in">
+                Meta's algorithm now demands 120+ creative variations. Agencies charge $60,000. We charge $179. Same quality. You control everything.
+            </p>
+            
+            <div class="trust-signal fade-in">
+                <span class="trust-badge"></span>
+                From the team that runs Spenga franchises
+            </div>
+            
+            <a href="#book-demo" class="cta-button fade-in">
+                Book Your Demo
+                <span class="cta-arrow">→</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Context -->
+    <section>
+        <div class="container">
+            <div class="context">
+                <p>
+                    Meta's Andromeda update changed the game—creative diversity is now how Facebook finds your customers. Without 100+ variations, you're invisible to 80% of your audience. But at $500-2,000 per video, who can afford it? <em>You can now.</em>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>Your Creative Pipeline, Simplified</h2>
+            
+            <div class="workflow-arrows">
+                <span>Define</span>
+                <span>→</span>
+                <span>Generate</span>
+                <span>→</span>
+                <span>Review</span>
+                <span>→</span>
+                <span>Deploy</span>
+            </div>
+            
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Input Your Business DNA</div>
+                    <div class="step-time">(5 minutes)</div>
+                    <div class="step-description">
+                        <ul>
+                            <li>Your personas (busy moms, young professionals, seniors)</li>
+                            <li>Your offers (free trial, membership special, seasonal promotion)</li>
+                            <li>Your brand voice (energetic, professional, welcoming)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">AI Creates Your Campaign</div>
+                    <div class="step-time">(24-48 hours)</div>
+                    <div class="step-description">
+                        <ul>
+                            <li>Combines your inputs into 120+ unique angles</li>
+                            <li>Generates images, video scripts, and copy variations</li>
+                            <li>Ensures no two ads feel identical</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">You Stay in Control</div>
+                    <div class="step-time">(as long as you need)</div>
+                    <div class="step-description">
+                        <ul>
+                            <li>Approve what resonates with your brand</li>
+                            <li>Request revisions on anything that's off</li>
+                            <li>Only deploy what you love</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">One-Click to Facebook</div>
+                    <div class="step-time">(instant)</div>
+                    <div class="step-description">
+                        <ul>
+                            <li>Direct integration with Meta Ads Manager</li>
+                            <li>Proper campaign structure for Andromeda optimization</li>
+                            <li>Ready to start converting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- The Math Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2>The Economics Are Undeniable</h2>
+            
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What You Need</th>
+                            <th>Traditional Cost</th>
+                            <th>Creative Muscle Cost</th>
+                            <th>You Save</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>120 Image Ads</td>
+                            <td>$24,000</td>
+                            <td class="price-highlight">$179</td>
+                            <td class="savings-highlight">$23,821</td>
+                        </tr>
+                        <tr>
+                            <td>120 Video Ads</td>
+                            <td>$60,000+</td>
+                            <td class="price-highlight">$179</td>
+                            <td class="savings-highlight">$59,821</td>
+                        </tr>
+                        <tr>
+                            <td>Full Campaign (Mixed)</td>
+                            <td>$42,000</td>
+                            <td class="price-highlight">$179</td>
+                            <td class="savings-highlight">$41,821</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="pricing-note">*Based on average agency/freelance pricing of $200/image, $500/video</p>
+        </div>
+    </section>
+    
+    <!-- Reality Check -->
+    <section>
+        <div class="container">
+            <h2>What This Means for Your Business</h2>
+            
+            <div class="reality-grid">
+                <div class="reality-card without">
+                    <h3><span class="icon-warning">⚠️</span> Without Creative Diversity:</h3>
+                    <ul class="reality-list">
+                        <li>
+                            <span class="icon-warning">⚠️</span>
+                            CPMs increase 20% due to "creative fatigue"
+                        </li>
+                        <li>
+                            <span class="icon-warning">⚠️</span>
+                            The algorithm can't find your ideal customers
+                        </li>
+                        <li>
+                            <span class="icon-warning">⚠️</span>
+                            You're competing with one hand tied behind your back
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="reality-card with">
+                    <h3><span class="icon-success">✓</span> With Creative Muscle:</h3>
+                    <ul class="reality-list">
+                        <li>
+                            <span class="icon-success">✅</span>
+                            Feed the algorithm what it needs to succeed
+                        </li>
+                        <li>
+                            <span class="icon-success">✅</span>
+                            Reach every customer segment with relevant messaging
+                        </li>
+                        <li>
+                            <span class="icon-success">✅</span>
+                            Test 120 angles to find your golden 20% that drive 80% of results
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industries -->
+    <section>
+        <div class="container">
+            <h2>Built for Real Businesses, Not Fortune 500s</h2>
+            
+            <div class="industries">
+                <div class="industry-card">
+                    <div class="industry-title">Fitness & Wellness</div>
+                    <div class="industry-examples">Yoga studios, gyms, CrossFit boxes, martial arts dojos</div>
+                    <div class="industry-use-case">Target every demographic from athletes to beginners</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-title">Beauty & Personal Care</div>
+                    <div class="industry-examples">Salons, spas, med spas, barbershops</div>
+                    <div class="industry-use-case">Different creative for wedding prep vs. self-care</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-title">Home Services</div>
+                    <div class="industry-examples">Contractors, painters, plumbers, electricians</div>
+                    <div class="industry-use-case">Separate messaging for emergency vs. renovation</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-title">Professional Services</div>
+                    <div class="industry-examples">Dental, chiropractic, physical therapy, veterinary</div>
+                    <div class="industry-use-case">Unique angles for new patients vs. routine care</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Common Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can't I just boost posts like before?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can, but Andromeda will limit your reach. The algorithm now expects diverse creative to properly optimize delivery. Single posts get stuck in expensive, narrow audience pockets.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I already work with an agency?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Perfect! Creative Muscle complements agency strategy. Many agencies struggle with the sheer volume Andromeda demands. We can supply the creative fuel while they handle strategy and optimization.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this just automated templates?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No. Every piece is generated specifically for your business using AI, but you review and approve everything. Think of it as having a creative team that works at digital speed but still respects your brand standards.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is this so cheap?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We use AI for generation, not $150/hour designers. Our costs: $1.20 for avatar rendering, $0.02 for voice, $0.15 for music, $0.10 for compute. No office. No overhead. Just results.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the catch?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        There isn't one. We built this because we needed it for our own businesses. We're franchise owners who were tired of overpaying for underdelivery. Now we're sharing the solution.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="final-cta" id="book-demo">
+        <div class="container">
+            <div class="cta-box">
+                <h2>The Algorithm Evolution Won't Wait</h2>
+                
+                <p class="cta-description">
+                    Every week without diverse creative costs you:<br>
+                    • Lost customers to competitors who adapted<br>
+                    • Higher CPMs from creative fatigue<br>
+                    • Missed opportunities to find your best audiences
+                </p>
+                
+                <p class="cta-description">
+                    <strong>See Creative Muscle in action. Book a 20-minute demo where we'll generate your first 10 ads live.</strong>
+                </p>
+                
+                <div class="urgency">Accepting 10 founding partners this month at special rates</div>
+                <br>
+                
+                <a href="https://calendly.com/your-link" class="cta-button">
+                    Book Your Demo Now
+                    <span class="cta-arrow">→</span>
+                </a>
+                
+                <p class="no-risk">No credit card required. No obligations.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Trust Bar -->
+    <footer class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <span class="trust-checkmark">✓</span>
+                    $1.49 per ad
+                </div>
+                <div class="trust-item">
+                    <span class="trust-checkmark">✓</span>
+                    48-hour turnaround
+                </div>
+                <div class="trust-item">
+                    <span class="trust-checkmark">✓</span>
+                    You own all content
+                </div>
+                <div class="trust-item">
+                    <span class="trust-checkmark">✓</span>
+                    Cancel anytime
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                faqItem.classList.toggle('active');
+                
+                // Close other FAQs
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== faqItem && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Smooth scroll offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Height of fixed nav
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.workflow-step, .reality-card, .industry-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
