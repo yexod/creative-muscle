@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Muscle - Facebook Ads Got 20x Harder. We Made Them 99% Cheaper.</title>
-    <meta name="description" content="Meta's algorithm demands 120+ creative variations. Agencies charge $60,000. We charge $179. Same quality. You control everything.">
+    <title>Creative Muscle - Meta's Algorithm Changed. We Solve It.</title>
+    <meta name="description" content="Meta's algorithm now requires 100+ creative variations. Traditional production costs $50,000+. We make it possible at a fraction of the cost.">
     
     <!-- JetBrains Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,6 +87,8 @@
             align-items: center;
         }
         
+        /* TODO: Replace with actual logo image */
+        /* <img src="path-to-logo-with-bionic-arm.png" alt="Creative Muscle" class="logo-image"> */
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -166,10 +168,17 @@
         .subhead {
             font-size: 1.25rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .hero-tagline {
+            font-size: 1.125rem;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            font-weight: 600;
         }
         
         .trust-signal {
@@ -276,6 +285,29 @@
             font-size: 1.125rem;
             line-height: 1.8;
             color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .context ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .context li {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .context li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
         }
         
         .context em {
@@ -293,6 +325,103 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* What Changed Section */
+        .what-changed {
+            background: var(--bg-secondary);
+            padding: 4rem 0;
+        }
+
+        .change-intro {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wave-section {
+            background: var(--bg-tertiary);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .wave-section.future {
+            border-left-color: var(--color-primary);
+        }
+
+        .wave-section h3 {
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .wave-section.future h3 {
+            color: var(--color-primary);
+        }
+
+        .wave-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .wave-section li {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .wave-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        .wave-section.future li::before {
+            color: var(--color-primary);
+        }
+
+        .wave-section li strong {
+            color: var(--text-primary);
+        }
+
+        .bottom-line {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--color-accent);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .bottom-line p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .bottom-line p:last-child {
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 0;
         }
         
         /* How It Works */
@@ -382,56 +511,43 @@
             font-size: 2rem;
             color: var(--color-primary);
         }
-        
-        /* Math Section / Table */
-        .pricing-table {
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-        
-        table {
-            width: 100%;
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-primary);
-        }
-        
-        th {
+
+        /* Value Prop Section */
+        .value-prop {
             background: var(--bg-tertiary);
-            padding: 1.5rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--text-primary);
-            border-bottom: 2px solid var(--border-primary);
-        }
-        
-        td {
-            padding: 1.5rem;
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--border-primary);
-        }
-        
-        tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .price-highlight {
-            color: var(--color-secondary);
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-        
-        .savings-highlight {
-            color: var(--color-accent);
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-        
-        .pricing-note {
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 2rem auto;
+            max-width: 900px;
+            border: 1px solid var(--border-primary);
             text-align: center;
-            color: var(--text-tertiary);
+        }
+
+        .value-prop h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .value-prop p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .value-prop .highlight {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .value-prop .note {
             font-size: 0.875rem;
+            color: var(--text-tertiary);
+            font-style: italic;
             margin-top: 1rem;
         }
         
@@ -733,16 +849,24 @@
                 gap: 1rem;
             }
             
-            table {
-                font-size: 0.875rem;
-            }
-            
-            th, td {
-                padding: 1rem 0.5rem;
-            }
-            
             .context {
                 padding: 2rem 1.5rem;
+            }
+
+            .value-prop {
+                padding: 2rem 1.5rem;
+            }
+
+            .value-prop h3 {
+                font-size: 1.5rem;
+            }
+
+            .value-prop p {
+                font-size: 1rem;
+            }
+
+            .value-prop .highlight {
+                font-size: 1.25rem;
             }
         }
         
@@ -785,6 +909,8 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
+            <!-- TODO: Replace text logo with actual logo image that includes bionic arm -->
+            <!-- Example: <img src="path-to-logo.png" alt="Creative Muscle" class="logo-image" style="height: 40px;"> -->
             <div class="logo">CREATIVE MUSCLE</div>
             <a href="#book-demo" class="nav-cta">Book Your Demo</a>
         </div>
@@ -798,12 +924,16 @@
             <div class="pixel-decoration pixel-3"></div>
             
             <h1 class="fade-in">
-                Facebook Ads Got 20x Harder.<br>
-                <span class="hero-highlight gradient-animate">We Made Them 99% Cheaper.</span>
+                Meta Changed How Facebook Ads Work.<br>
+                Most Businesses Haven't Noticed Yet.
             </h1>
             
             <p class="subhead fade-in">
-                Meta's algorithm now demands 120+ creative variations. Agencies charge $60,000. We charge $179. Same quality. You control everything.
+                Meta's algorithm now requires 100+ creative variations to reach your customers. Without them, your costs rise and conversions fall.
+            </p>
+
+            <p class="hero-tagline fade-in">
+                Early movers win. We make it possible.
             </p>
             
             <a href="#book-demo" class="cta-button fade-in">
@@ -813,13 +943,57 @@
         </div>
     </section>
     
+    <!-- What Changed Section -->
+    <section class="what-changed">
+        <div class="container">
+            <h2>What Changed (And Why It Matters)</h2>
+            
+            <p class="change-intro">
+                Meta fundamentally transformed Facebook advertising—from manual targeting to AI-driven delivery. This isn't an update. It's a complete reimagining.
+            </p>
+
+            <div class="wave-section">
+                <h3>The First Wave: Andromeda (October 2024)</h3>
+                <ul>
+                    <li>Meta's AI uses creative diversity—not targeting—to find customers</li>
+                    <li>Businesses running 3-6 ads reach only 20% of their potential audience</li>
+                    <li>Industry reports show <strong>20%+ CPM increases</strong> for advertisers who haven't adapted</li>
+                    <li><strong>Result: Your costs rise while lead quality drops</strong></li>
+                </ul>
+            </div>
+
+            <div class="wave-section future">
+                <h3>The Coming Wave: Advantage+ (Rolling out 2025)</h3>
+                <ul>
+                    <li>More control shifts to Meta's AI</li>
+                    <li>Creative quality becomes your only differentiator</li>
+                    <li>The gap between winners and losers will widen dramatically</li>
+                </ul>
+            </div>
+
+            <div class="bottom-line">
+                <p>
+                    You need 100+ meaningfully different creative variations to compete. At $500-2,000 per video through traditional methods, that's $50,000-200,000 just to stay viable.
+                </p>
+                <p>
+                    Creative Muscle is built specifically for this new reality.
+                </p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Context -->
     <section>
         <div class="container">
             <div class="context">
-                <p>
-                    Meta's Andromeda update changed the game — creative diversity is now how Facebook finds your customers. Without 100+ variations, you're invisible to 80% of your audience. But at $500-2,000 per video, who can afford it? <em>You can now.</em>
-                </p>
+                <p><strong>Here's what you're up against:</strong></p>
+                <ul>
+                    <li>You need 100+ meaningfully different creative variations</li>
+                    <li>Traditional agencies charge $500-2,000 per video</li>
+                    <li>That's $50,000-200,000 just to meet Meta's minimum requirements</li>
+                    <li>Most businesses can't afford it. Most who try take 6+ months to produce it.</li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><em>Creative Muscle changes the math completely.</em></p>
             </div>
         </div>
     </section>
@@ -859,9 +1033,10 @@
                     <div class="step-time">(24-48 hours)</div>
                     <div class="step-description">
                         <ul>
-                            <li>Combines your inputs into 120+ unique angles</li>
+                            <li>Combines your inputs into 100+ unique angles</li>
                             <li>Generates images, video scripts, and copy variations</li>
-                            <li>Ensures no two ads feel identical</li>
+                            <li>Maintains your brand voice and visual identity</li>
+                            <li>Ensures meaningful differentiation, not template swaps</li>
                         </ul>
                     </div>
                 </div>
@@ -895,44 +1070,22 @@
         </div>
     </section>
     
-    <!-- The Math Section -->
-    <section id="pricing">
+    <!-- Value Proposition Section -->
+    <section>
         <div class="container">
-            <h2>The Economics Are Undeniable</h2>
-            
-            <div class="pricing-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>What You Need</th>
-                            <th>Traditional Cost</th>
-                            <th>Creative Muscle Cost</th>
-                            <th>You Save</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>120 Image Ads</td>
-                            <td>$24,000</td>
-                            <td class="price-highlight">$179</td>
-                            <td class="savings-highlight">$23,821</td>
-                        </tr>
-                        <tr>
-                            <td>120 Video Ads</td>
-                            <td>$60,000+</td>
-                            <td class="price-highlight">$179</td>
-                            <td class="savings-highlight">$59,821</td>
-                        </tr>
-                        <tr>
-                            <td>Full Campaign (Mixed)</td>
-                            <td>$42,000</td>
-                            <td class="price-highlight">$179</td>
-                            <td class="savings-highlight">$41,821</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="value-prop">
+                <h3>The Economics Are Undeniable</h3>
+                <p>
+                    <strong>Traditional production:</strong> $50,000+ for 100 videos
+                </p>
+                <p>
+                    <strong>Creative Muscle:</strong> One monthly subscription. Same quality. Complete control.
+                </p>
+                <span class="highlight">Average client savings: $3,000+ per month</span>
+                <p class="note">
+                    *Based on industry-standard agency/freelance rates of $500+/video, $200+/image
+                </p>
             </div>
-            <p class="pricing-note">*Based on average agency/freelance pricing of $200/image, $500/video</p>
         </div>
     </section>
     
@@ -943,15 +1096,15 @@
             
             <div class="reality-grid">
                 <div class="reality-card without">
-                    <h3><span class="icon-warning">⚠️</span> Without Creative Diversity:</h3>
+                    <h3><span class="icon-warning">⚠️</span> Without Sufficient Creative Volume:</h3>
                     <ul class="reality-list">
                         <li>
                             <span class="icon-warning">⚠️</span>
-                            CPMs increase 20% due to "creative fatigue"
+                            CPMs increase 20%+ due to creative fatigue
                         </li>
                         <li>
                             <span class="icon-warning">⚠️</span>
-                            The algorithm can't find your ideal customers
+                            Meta's AI can't find your ideal customers
                         </li>
                         <li>
                             <span class="icon-warning">⚠️</span>
@@ -973,7 +1126,15 @@
                         </li>
                         <li>
                             <span class="icon-success">✅</span>
-                            Test 120 angles to find your golden 20% that drive 80% of results
+                            Test 100+ angles to find your golden 20% that drive 80% of results
+                        </li>
+                        <li>
+                            <span class="icon-success">✅</span>
+                            Stay ahead as Meta evolves to AI-first advertising
+                        </li>
+                        <li>
+                            <span class="icon-success">✅</span>
+                            Maintain brand quality and authenticity even at high volume
                         </li>
                     </ul>
                 </div>
@@ -1046,17 +1207,27 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        No. Every piece is generated specifically for your business using AI, but you provide the initial footage, styling, and sound; and you review and approve everything at the end of it all. Think of it as having a creative team that works at digital speed but still respects your brand standards.
+                        No. Every asset is generated specifically for your business using AI trained on your brand voice, customer personas, and offers. You provide foundational assets (photos, video clips, brand guidelines). The AI creates unique variations that maintain your authentic brand identity. You review and approve everything before deployment.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How is this so cheap?</span>
+                        <span>How is this so affordable?</span>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
                         We use AI for generation, not $150/hour designers. No office. No overhead. Just results.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about Advantage+ and future Meta changes?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Meta is continuing to shift more control to AI-driven automation. Advantage+ (rolling out through 2025) will make creative quality and volume even more critical as the platform takes over targeting and optimization. Creative Muscle is built specifically for this AI-first advertising landscape—we help you produce the volume Meta's algorithm needs while maintaining the quality that sets you apart from AI-generated "slop."
                     </div>
                 </div>
                 
@@ -1090,7 +1261,7 @@
                     <strong>See Creative Muscle in action. Book a 20-minute demo where we'll generate your first 10 ads live.</strong>
                 </p>
                 
-                <div class="urgency">Accepting 10 founding partners this month at special rates</div>
+                <div class="urgency">Accepting founding partners at special rates</div>
                 <br>
                 
                 <a href="https://calendly.com/your-link" class="cta-button">
@@ -1109,7 +1280,7 @@
             <div class="trust-items">
                 <div class="trust-item">
                     <span class="trust-checkmark">✓</span>
-                    $1.49 per ad
+                    $3,000+ monthly savings
                 </div>
                 <div class="trust-item">
                     <span class="trust-checkmark">✓</span>
