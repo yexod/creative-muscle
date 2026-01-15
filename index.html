@@ -903,6 +903,134 @@
             background-size: 200% 200%;
             animation: gradient-shift 3s ease infinite;
         }
+
+        /* ========================================
+           ENHANCED MOBILE OPTIMIZATIONS
+           ======================================== */
+        
+        @media (max-width: 992px) {
+            section {
+                padding: 4rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Typography refinements */
+            h1 {
+                font-size: clamp(1.75rem, 5vw, 3.5rem);
+                line-height: 1.1;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .subhead {
+                font-size: clamp(1rem, 4vw, 1.25rem);
+            }
+            
+            .hero-tagline {
+                font-size: clamp(1.1rem, 4vw, 1.3rem);
+            }
+            
+            /* Layout improvements */
+            .workflow,
+            .reality-grid,
+            .industries {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .workflow-arrows {
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 1.5rem;
+            }
+            
+            .workflow-arrows span:nth-child(even) {
+                transform: rotate(90deg);
+            }
+            
+            /* Touch targets */
+            .cta-button,
+            .nav-cta,
+            .faq-question {
+                min-height: 44px;
+            }
+            
+            .cta-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            /* Spacing optimizations */
+            .context,
+            .value-prop {
+                margin: 1.5rem auto;
+            }
+            
+            .context p,
+            .context li,
+            .value-prop p {
+                font-size: 1rem;
+            }
+            
+            .wave-section {
+                padding: 1.5rem;
+            }
+            
+            .wave-section h3 {
+                font-size: 1.25rem;
+            }
+            
+            .wave-section li {
+                font-size: 0.9375rem;
+            }
+            
+            /* Trust bar */
+            .trust-items {
+                gap: 1rem;
+                justify-content: space-around;
+            }
+            
+            .trust-item {
+                font-size: 0.875rem;
+                flex-basis: calc(50% - 0.5rem);
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Extra small screens */
+            section {
+                padding: 2.5rem 0;
+            }
+            
+            .container {
+                padding: 0 0.75rem;
+            }
+            
+            .hero {
+                padding: 7rem 0 3rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-box {
+                padding: 2rem 1.5rem;
+            }
+            
+            .trust-items {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .trust-item {
+                flex-basis: auto;
+            }
+        }
     </style>
 </head>
 <body>
