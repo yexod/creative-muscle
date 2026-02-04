@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* [All your existing CSS remains exactly the same] */
         :root {
             /* Brand Colors */
             --color-primary: #7B3FF2;
@@ -107,6 +108,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-glow);
+            cursor: pointer;
         }
         
         .nav-cta:hover {
@@ -221,6 +223,8 @@
             box-shadow: var(--shadow-glow);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            border: none;
         }
         
         .cta-button::before {
@@ -1040,7 +1044,13 @@
             <!-- TODO: Replace text logo with actual logo image that includes bionic arm -->
             <!-- Example: <img src="path-to-logo.png" alt="Creative Muscle" class="logo-image" style="height: 40px;"> -->
             <div class="logo">CREATIVE MUSCLE</div>
-            <a href="#book-demo" class="nav-cta">Book Your Demo</a>
+            <button 
+                class="nav-cta"
+                data-cal-link="brigham-doxey/creative-muscle-demo"
+                data-cal-namespace="creative-muscle-demo"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+                Book Your Demo
+            </button>
         </div>
     </nav>
     
@@ -1064,10 +1074,14 @@
                 Early movers win. We make it possible.
             </p>
             
-            <a href="#book-demo" class="cta-button fade-in">
+            <button 
+                class="cta-button fade-in"
+                data-cal-link="brigham-doxey/creative-muscle-demo"
+                data-cal-namespace="creative-muscle-demo"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
                 Book Your Demo
                 <span class="cta-arrow">→</span>
-            </a>
+            </button>
         </div>
     </section>
     
@@ -1109,22 +1123,6 @@
             </div>
         </div>
     </section>
-    
-    <!-- Context -->
-    <!-- <section>
-        <div class="container">
-            <div class="context">
-                <p><strong>Here's what you're up against:</strong></p>
-                <ul>
-                    <li>You need 100+ meaningfully different creative variations</li>
-                    <li>Traditional agencies charge $500-2,000 per video</li>
-                    <li>That's $50,000-200,000 just to meet Meta's minimum requirements</li>
-                    <li>Most businesses can't afford it. Most who try take 6+ months to produce it.</li>
-                </ul>
-                <p style="margin-top: 1.5rem;"><em>Creative Muscle changes the math completely.</em></p>
-            </div>
-        </div>
-    </section> -->
     
     <!-- How It Works -->
     <section id="how-it-works">
@@ -1212,25 +1210,6 @@
             </div>
         </div>
     </section>
-    
-    <!-- Value Proposition Section -->
-    <!-- <section>
-        <div class="container">
-            <div class="value-prop">
-                <h3>The Economics Are Undeniable</h3>
-                <p>
-                    <strong>Traditional production:</strong> $50,000+ for 100 videos
-                </p>
-                <p>
-                    <strong>Creative Muscle:</strong> One monthly subscription. Same quality. Complete control.
-                </p>
-                <span class="highlight">Average client savings: $3,000+ per month</span>
-                <p class="note">
-                    *Based on industry-standard agency/freelance rates of $2,000+/video, $200+/image
-                </p>
-            </div>
-        </div>
-    </section> -->
     
     <!-- Reality Check -->
     <section>
@@ -1423,10 +1402,14 @@
                 <div class="urgency">Accepting founding partners at special rates</div>
                 <br>
                 
-                <a href="https://cal.com/brigham-doxey/creative-muscle-demo" target="_blank" rel="noopener noreferrer" class="cta-button">
+                <button 
+                    class="cta-button"
+                    data-cal-link="brigham-doxey/creative-muscle-demo"
+                    data-cal-namespace="creative-muscle-demo"
+                    data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
                     Book Your Demo Now
                     <span class="cta-arrow">→</span>
-                </a>
+                </button>
                 
                 <p class="no-risk">No credit card required. No obligations.</p>
             </div>
@@ -1456,6 +1439,13 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Cal.com Embed Script -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "creative-muscle-demo", {origin:"https://app.cal.com"});
+      Cal.ns["creative-muscle-demo"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
     
     <script>
         // FAQ Toggle
