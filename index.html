@@ -6,16 +6,13 @@
     <title>Creative Muscle - Meta's Algorithm Changed. We Solve It.</title>
     <meta name="description" content="Meta's algorithm now requires 100+ creative variations. Traditional production costs $50,000+. We make it possible at a fraction of the cost.">
     
-    <!-- Preload Cal.com script for faster loading -->
-    <link rel="preload" href="https://app.cal.com/embed/embed.js" as="script">
-    
     <!-- JetBrains Mono Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* [All your existing CSS - keeping it the same until the additions at the end] */
+        /* [All your existing CSS remains the same] */
         :root {
             /* Brand Colors */
             --color-primary: #7B3FF2;
@@ -252,40 +249,12 @@
             box-shadow: var(--shadow-lg), var(--shadow-glow);
         }
         
-        /* Loading state for CTA buttons */
-        .cta-button.loading {
-            opacity: 0.7;
-            pointer-events: none;
-        }
-        
-        .cta-button.loading::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            top: 50%;
-            right: 1rem;
-            margin-top: -8px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spinner 0.6s linear infinite;
-        }
-        
-        @keyframes spinner {
-            to { transform: rotate(360deg); }
-        }
-        
         .cta-arrow {
             transition: transform 0.3s ease;
         }
         
         .cta-button:hover .cta-arrow {
             transform: translateX(4px);
-        }
-        
-        .cta-button.loading .cta-arrow {
-            opacity: 0;
         }
         
         /* Context Section */
@@ -1069,42 +1038,6 @@
             }
         }
     </style>
-    
-    <!-- Load Cal.com script early in the head -->
-    <script type="text/javascript">
-      (function (C, A, L) { 
-        let p = function (a, ar) { a.q.push(ar); }; 
-        let d = C.document; 
-        C.Cal = C.Cal || function () { 
-          let cal = C.Cal; 
-          let ar = arguments; 
-          if (!cal.loaded) { 
-            cal.ns = {}; 
-            cal.q = cal.q || []; 
-            d.head.appendChild(d.createElement("script")).src = A; 
-            cal.loaded = true; 
-          } 
-          if (ar[0] === L) { 
-            const api = function () { p(api, arguments); }; 
-            const namespace = ar[1]; 
-            api.q = api.q || []; 
-            if(typeof namespace === "string"){
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              p(cal.ns[namespace], ar);
-              p(cal, ["initNamespace", namespace]);
-            } else p(cal, ar); 
-            return;
-          } 
-          p(cal, ar); 
-        }; 
-      })(window, "https://app.cal.com/embed/embed.js", "init");
-      
-      Cal("init", "creative-muscle-demo", {origin:"https://app.cal.com"});
-      Cal.ns["creative-muscle-demo"]("ui", {
-        "hideEventTypeDetails": false,
-        "layout": "month_view"
-      });
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -1507,24 +1440,51 @@
         </div>
     </footer>
     
+    <!-- Cal.com Embed Script - Load and initialize immediately -->
+    <script type="text/javascript">
+      (function (C, A, L) { 
+        let p = function (a, ar) { a.q.push(ar); }; 
+        let d = C.document; 
+        C.Cal = C.Cal || function () { 
+          let cal = C.Cal; 
+          let ar = arguments; 
+          if (!cal.loaded) { 
+            cal.ns = {}; 
+            cal.q = cal.q || []; 
+            d.head.appendChild(d.createElement("script")).src = A; 
+            cal.loaded = true; 
+          } 
+          if (ar[0] === L) { 
+            const api = function () { p(api, arguments); }; 
+            const namespace = ar[1]; 
+            api.q = api.q || []; 
+            if(typeof namespace === "string"){
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar); 
+            return;
+          } 
+          p(cal, ar); 
+        }; 
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      
+      // Initialize Cal.com immediately
+      Cal("init", "creative-muscle-demo", {origin:"https://app.cal.com"});
+      
+      // Preload the UI and calendar in the background
+      Cal.ns["creative-muscle-demo"]("preload", {
+        calLink: "brigham-doxey/creative-muscle-demo"
+      });
+      
+      // Configure UI settings
+      Cal.ns["creative-muscle-demo"]("ui", {
+        "hideEventTypeDetails": false,
+        "layout": "month_view"
+      });
+    </script>
+    
     <script>
-        // Add loading state to booking buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookingButtons = document.querySelectorAll('.booking-trigger');
-            
-            bookingButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Add loading state
-                    this.classList.add('loading');
-                    
-                    // Remove loading state after Cal.com modal opens (timeout fallback)
-                    setTimeout(() => {
-                        this.classList.remove('loading');
-                    }, 1000);
-                });
-            });
-        });
-        
         // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
